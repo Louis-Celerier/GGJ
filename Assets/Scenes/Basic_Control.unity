@@ -142,12 +142,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 971730022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76aa31ea15a42b2468595ec6aadae11c, type: 3}
+  m_Script: {fileID: 11500000, guid: c067d5ce94dfeb84289762d20b4dd926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashVelocity: 50
-  dashCooldown: 0
+  FireballPrefab: {fileID: 1110652277112630011, guid: e3c9235e68a3d094193e0ff1cebf6f23, type: 3}
   _rb: {fileID: 971730024}
+  Speed: 10
+  FireCD: 2
 --- !u!1 &1107655257
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,5 +487,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6516222683151253813, guid: fe9957e1c8478334f861035c9801d991, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fe9957e1c8478334f861035c9801d991, type: 3}
