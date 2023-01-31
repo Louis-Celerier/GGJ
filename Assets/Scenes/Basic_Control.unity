@@ -123,6 +123,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &971730022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9181364857851639903, guid: fe9957e1c8478334f861035c9801d991, type: 3}
+  m_PrefabInstance: {fileID: 9181364856284414840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &971730024 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 9181364857851639890, guid: fe9957e1c8478334f861035c9801d991, type: 3}
+  m_PrefabInstance: {fileID: 9181364856284414840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &971730028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971730022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76aa31ea15a42b2468595ec6aadae11c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashVelocity: 50
+  dashCooldown: 0
+  _rb: {fileID: 971730024}
 --- !u!1 &1107655257
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +473,14 @@ PrefabInstance:
     - target: {fileID: 9181364857851639889, guid: fe9957e1c8478334f861035c9801d991, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181364857851639892, guid: fe9957e1c8478334f861035c9801d991, type: 3}
+      propertyPath: _dashingTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181364857851639892, guid: fe9957e1c8478334f861035c9801d991, type: 3}
+      propertyPath: _dashingVelocity
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9181364857851639903, guid: fe9957e1c8478334f861035c9801d991, type: 3}
       propertyPath: m_Name
