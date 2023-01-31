@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private float distToGround;
 
     private bool canJump = false;
+    private bool doubleJump = false;
     
     // Start is called before the first frame update
     void Start()
@@ -33,12 +34,20 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         horizontal = Input.GetAxis("Horizontal");
 
-        if (Input.GetKey(KeyCode.Space) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            _rb.velocity = new Vector3(_rb.velocity.x, JumpForce, _rb.velocity.z);
+            if (IsGrounded())
+            {
+                doubleJump = true;
+                _rb.velocity = new Vector3(_rb.velocity.x, JumpForce, _rb.velocity.z);
+            } else if (doubleJump)
+            {
+                doubleJump = false;
+                _rb.velocity = new Vector3(_rb.velocity.x, JumpForce, _rb.velocity.z);
+            }
         }
     }
     
