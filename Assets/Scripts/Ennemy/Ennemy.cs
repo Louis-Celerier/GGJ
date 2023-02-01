@@ -4,7 +4,7 @@ using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Ennemy : MonoBehaviour
 {
     public int HP = 600;
     public int attackPoints = 50;

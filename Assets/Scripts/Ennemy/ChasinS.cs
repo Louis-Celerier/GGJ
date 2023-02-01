@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ChasingState : StateMachineBehaviour
+public class ChasinS : StateMachineBehaviour
 {
     NavMeshAgent agent;
     Transform player;
-    float chasingRange = 8;
-    float attackingRange = 2f;
+    public float chasingRange = 8;
+    public float attackingRange = 4f;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

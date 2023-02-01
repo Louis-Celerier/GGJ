@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AttackingState : StateMachineBehaviour
+public class AttackS : StateMachineBehaviour
 {
     Transform player;
     float attackingRange = 3f;

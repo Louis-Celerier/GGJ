@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class WalkingState : StateMachineBehaviour
+public class WalkinS : StateMachineBehaviour
 {
     public List<Transform> wayPoints = new List<Transform>();
-    public NavMeshAgent agent;
-    public Transform player;
-    public float chasingRange = 5;
+    private NavMeshAgent agent;
+    private Transform player;
+    private float chasingRange = 5;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent = animator.GetComponent<NavMeshAgent>();
         agent.speed = 1.5f;
-        //GameObject go;
-
-        //foreach (Transform t in go.transform) wayPoints.Add(t);
+        GameObject go;
+        go = GameObject.FindGameObjectWithTag("Points");
+        foreach (Transform t in go.transform) wayPoints.Add(t);
 
         agent.SetDestination(wayPoints[Random.Range(0, wayPoints.Count)].position);
 
@@ -28,9 +28,9 @@ public class WalkingState : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (agent.remainingDistance <= agent.stoppingDistance) animator.SetBool("isWalking", false);
+        if (agent.remainingDistance <= agent.stoppingDistance) agent.SetDestination(wayPoints[Random.Range(0, wayPoints.Count)].position);
 
-        float distance = Vector2.Distance(player.position, animator.transform.position);
+        float distance = Vector3.Distance(player.position, animator.transform.position);
         if (distance <= chasingRange) animator.SetBool("isChasing", true);
 
     }
