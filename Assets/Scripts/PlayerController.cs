@@ -54,12 +54,20 @@ public class PlayerController : MonoBehaviour
         if (IsGrounded())
         {
             _canDash = true;
+            canJump = true;
+        }
+        else
+        {
+            canJump = false;
         }
         
         if (dashInput && _canDash)
         {
             _isDashing = true;
             _canDash = false;
+            
+            //Offer a jump after the dash
+            doubleJump = true;
 
             _dashDir = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
             if (_dashDir == Vector2.zero)
@@ -77,7 +85,7 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (IsGrounded())
+            if (canJump)
             {
                 doubleJump = true;
                 _rb.velocity = new Vector3(_rb.velocity.x, JumpForce, _rb.velocity.z);
