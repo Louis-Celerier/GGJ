@@ -34,10 +34,12 @@ public class PlayerController : MonoBehaviour
     private bool _isDashing;
     private bool _canDash = true;
 
+    public bool dirRight = true;
+    
     // Start is called before the first frame update
     void Start()
     {
-        distToGround = _collider.size.y/2;
+        distToGround = _collider.size.y/2 * transform.localScale.y;
     }
 
     private void FixedUpdate()
@@ -49,6 +51,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {   
         horizontal = Input.GetAxis("Horizontal");
+
+        if (horizontal > 0) dirRight = true;
+        else if (horizontal < 0) dirRight = false;
+        
         var dashInput = Input.GetKeyDown(KeyCode.F);
 
         if (IsGrounded())
@@ -102,7 +108,8 @@ public class PlayerController : MonoBehaviour
     
     bool IsGrounded()
     {
-        return Physics.Raycast(_rb.position, Vector3.down, distToGround + 0.07f);
+        Debug.DrawLine(_rb.position, _rb.position + Vector3.down * (distToGround + 0.12f));
+        return Physics.Raycast(_rb.position, Vector3.down, distToGround + 0.12f);
     }
 
     private IEnumerator StopDashing()
