@@ -35,4 +35,15 @@ public class PlayerAnimator : MonoBehaviour
     {
         _animator.Play("CrocoFire");
     }
+
+    public void PlayMeleeAttackAnimation()
+    {
+        _animator.Play("CrocoAttack");
+    }
+
+    public void PlayParingAnimation()
+    {
+        _animator.Play("CrocoGarde");
+    }
+    
 }

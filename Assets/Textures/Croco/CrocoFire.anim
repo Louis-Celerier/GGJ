@@ -34,7 +34,7 @@ AnimationClip:
       value: {fileID: 21300000, guid: 3e1676840b21c1848976c169a3c1169a, type: 3}
     - time: 0.25
       value: {fileID: 21300000, guid: 63787d07e0bf92a478c1824d7b91cea9, type: 3}
-    - time: 0.51666665
+    - time: 0.5
       value: {fileID: 21300000, guid: 63787d07e0bf92a478c1824d7b91cea9, type: 3}
     attribute: m_Sprite
     path: Sword
@@ -45,7 +45,7 @@ AnimationClip:
       value: {fileID: 21300000, guid: 0861f52d65607e4468550872e7c7e834, type: 3}
     - time: 0.25
       value: {fileID: 21300000, guid: 18c4e96ff6b17fb4ca84b1162c24b179, type: 3}
-    - time: 0.51666665
+    - time: 0.5
       value: {fileID: 21300000, guid: 18c4e96ff6b17fb4ca84b1162c24b179, type: 3}
     attribute: m_Sprite
     path: Armor
@@ -115,7 +115,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5333333
+    m_StopTime: 0.51666665
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

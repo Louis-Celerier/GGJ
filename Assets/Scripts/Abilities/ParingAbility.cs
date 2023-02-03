@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class ParingAbility : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _sprite;
-    [SerializeField] private Collider _collider;
+    private PlayerAnimator _playerAnimator;
 
     public float paringDelay = 0.5f;
     
     private bool shieldInput = false;
+    
+    void Start()
+    {
+        _playerAnimator = GetComponent<PlayerAnimator>();
+    }
     
     void Update()
     {
@@ -17,8 +21,7 @@ public class ParingAbility : MonoBehaviour
 
         if (shieldInput)
         {
-            _sprite.enabled = true;
-            _collider.enabled = true;
+            _playerAnimator.PlayParingAnimation();
             
             StartCoroutine(StopParing());
         }
@@ -27,7 +30,5 @@ public class ParingAbility : MonoBehaviour
     IEnumerator StopParing()
     {
         yield return new WaitForSeconds(paringDelay);
-        _sprite.enabled = false;
-        _collider.enabled = false;
     }
 }
