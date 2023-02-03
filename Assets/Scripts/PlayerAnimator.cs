@@ -27,7 +27,7 @@ public class PlayerAnimator : MonoBehaviour
         _swordRenderer.flipX = _playerController.dirRight;
         _shieldRenderer.flipX = _playerController.dirRight;
         
-        _animator.SetBool("isRun", Mathf.Abs(_rb.velocity.x) > 0);
+        _animator.SetBool("isRun", Mathf.Abs(_rb.velocity.x) > 0.5f);
         _animator.SetBool("isJump", !_playerController.IsGrounded());
     }
 
