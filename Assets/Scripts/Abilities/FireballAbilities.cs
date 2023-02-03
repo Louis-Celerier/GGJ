@@ -7,6 +7,9 @@ public class FireballAbilities : MonoBehaviour
     [SerializeField] private GameObject FireballPrefab;
     [SerializeField] private Rigidbody _rb;
 
+    [SerializeField] private Transform _fireballSocketR;
+    [SerializeField] private Transform _fireballSocketL;
+    
     private bool _canFire = true;
     
     public float Speed = 10.0f;
@@ -14,12 +17,19 @@ public class FireballAbilities : MonoBehaviour
 
     private float _fireTimer;
 
+    private PlayerController _playerController;
+    private PlayerAnimator _playerAnimator;
+
+    void Start()
+    {
+        _playerAnimator = GetComponent<PlayerAnimator>();
+        _playerController = GetComponent<PlayerController>();
+    }
+    
     // Update is called once per frame
     void Update()
     {
         var abilityInput = Input.GetKey(KeyCode.E);
-        
-        Debug.Log(_fireTimer);
 
         if (!_canFire)
         {
@@ -35,10 +45,22 @@ public class FireballAbilities : MonoBehaviour
         {
             _canFire = false;
             
-            var fireball_obj = Instantiate(FireballPrefab, _rb.position, Quaternion.identity);
-            var projectile = fireball_obj.GetComponent<Projectile>();
+            _playerAnimator.PlayFireAnimation();
 
-            Vector3 vel = new Vector3(_rb.transform.localScale.x, 0, 0) * Speed;
+            Transform socket;
+            if (_playerController.dirRight)
+            {
+                FireballPrefab.GetComponent<SpriteRenderer>().flipX = false;
+                socket = _fireballSocketR;
+            } else {
+                FireballPrefab.GetComponent<SpriteRenderer>().flipX = true;
+                socket = _fireballSocketL;
+            }
+
+            var fireball_obj = Instantiate(FireballPrefab, socket.position, Quaternion.identity);
+            var projectile = fireball_obj.GetComponent<Projectile>();
+            
+            Vector3 vel = new Vector3(_rb.transform.localScale.x, 0, 0) * Speed * (_playerController.dirRight ? 1 : -1);
             projectile.SetVelocity(vel);
         }
     }

@@ -35,10 +35,13 @@ public class PlayerController : MonoBehaviour
     private bool _canDash = true;
 
     public bool dirRight = true;
+
+    public PlayerAnimator _playerAnimator;
     
     // Start is called before the first frame update
     void Start()
     {
+        _playerAnimator = GetComponent<PlayerAnimator>();   
         distToGround = _collider.size.y/2 * transform.localScale.y;
     }
 
@@ -106,7 +109,7 @@ public class PlayerController : MonoBehaviour
             _rb.velocity = new Vector3(horizontal * Speed, _rb.velocity.y, _rb.velocity.z);
     }
     
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         Debug.DrawLine(_rb.position, _rb.position + Vector3.down * (distToGround + 0.12f));
         return Physics.Raycast(_rb.position, Vector3.down, distToGround + 0.12f);
