@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class MeleeAbilities : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer sword;
-    [SerializeField] private Collider _collider;
+    
+    private PlayerAnimator _playerAnimator;
     
     public float delayAttack = 0.3f;
     
     private bool attackInput;
+
+    void Start()
+    {
+        _playerAnimator = GetComponent<PlayerAnimator>();
+    }
     
     void Update()
     {
         attackInput = Input.GetKeyDown(KeyCode.G);
 
         if (attackInput)
-        {
-            sword.enabled = true;
-            _collider.enabled = true;
-
+        {   
+            _playerAnimator.PlayMeleeAttackAnimation();
+            
             StartCoroutine(StopAttack());
         }
     }
@@ -27,8 +31,5 @@ public class MeleeAbilities : MonoBehaviour
     IEnumerator StopAttack()
     {
         yield return new WaitForSeconds(delayAttack);
-        sword.enabled = false;
-        _collider.enabled = false;
-
     }
 }
