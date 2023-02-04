@@ -8,6 +8,7 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private SpriteRenderer _armorRenderer;
     [SerializeField] private SpriteRenderer _swordRenderer;
     [SerializeField] private SpriteRenderer _shieldRenderer;
+    [SerializeField] private SpriteRenderer _effectRenderer;
     
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody _rb;
@@ -26,9 +27,10 @@ public class PlayerAnimator : MonoBehaviour
         _armorRenderer.flipX = _playerController.dirRight;
         _swordRenderer.flipX = _playerController.dirRight;
         _shieldRenderer.flipX = _playerController.dirRight;
+        _effectRenderer.flipX = _playerController.dirRight;
         
         _animator.SetBool("isRun", Mathf.Abs(_rb.velocity.x) > 0.5f);
-        _animator.SetBool("isJump", !_playerController.IsGrounded());
+        _animator.SetBool("isGround", _playerController.IsGrounded());
     }
 
     public void PlayFireAnimation()
@@ -36,6 +38,11 @@ public class PlayerAnimator : MonoBehaviour
         _animator.Play("CrocoFire");
     }
 
+    public void PlayJumpAnimation()
+    {
+        _animator.Play("CrocoJump");
+    }
+    
     public void PlayMeleeAttackAnimation()
     {
         _animator.Play("CrocoAttack");
@@ -44,6 +51,11 @@ public class PlayerAnimator : MonoBehaviour
     public void PlayParingAnimation()
     {
         _animator.Play("CrocoGarde");
+    }
+
+    public void PlayDashAnimation()
+    {
+        _animator.Play("CrocoDash");
     }
     
 }

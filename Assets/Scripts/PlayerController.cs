@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
 
         if (_isDashing)
         {
+            _playerAnimator.PlayDashAnimation();
             _rb.velocity = _dashDir.normalized * _dashingVelocity;
         }
         
@@ -98,10 +99,12 @@ public class PlayerController : MonoBehaviour
             {
                 doubleJump = true;
                 _rb.velocity = new Vector3(_rb.velocity.x, JumpForce, _rb.velocity.z);
+                _playerAnimator.PlayJumpAnimation();
             } else if (doubleJump)
             {
                 doubleJump = false;
                 _rb.velocity = new Vector3(_rb.velocity.x, JumpForce, _rb.velocity.z);
+                _playerAnimator.PlayJumpAnimation();
             }
         }
 
@@ -111,7 +114,7 @@ public class PlayerController : MonoBehaviour
     
     public bool IsGrounded()
     {
-        Debug.DrawLine(_rb.position, _rb.position + Vector3.down * (distToGround + 0.50f));
+        //Debug.DrawLine(_rb.position, _rb.position + Vector3.down * (distToGround + 0.50f));
         return Physics.Raycast(_rb.position, Vector3.down, distToGround + 0.50f);
     }
 
