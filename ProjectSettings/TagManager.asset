@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Points
+  - Liane
   layers:
   - Default
   - TransparentFX

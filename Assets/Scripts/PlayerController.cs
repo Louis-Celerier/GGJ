@@ -114,8 +114,8 @@ public class PlayerController : MonoBehaviour
     
     public bool IsGrounded()
     {
-        //Debug.DrawLine(_rb.position, _rb.position + Vector3.down * (distToGround + 0.50f));
-        return Physics.Raycast(_rb.position, Vector3.down, distToGround + 0.50f);
+        Debug.DrawLine(_rb.position, _rb.position + Vector3.down * (distToGround + 0.40f));
+        return Physics.Raycast(_rb.position, Vector3.down, distToGround + 0.40f);
     }
 
     private IEnumerator StopDashing()

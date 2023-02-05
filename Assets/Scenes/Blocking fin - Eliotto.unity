@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!212 &2766897 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9181364856284414842, guid: fe9957e1c8478334f861035c9801d991, type: 3}
+  m_PrefabInstance: {fileID: 1947919554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &65889248
 GameObject:
   m_ObjectHideFlags: 0
@@ -3043,6 +3048,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9181364857851639903, guid: fe9957e1c8478334f861035c9801d991, type: 3}
   m_PrefabInstance: {fileID: 1947919554}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &843152169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9010585077968437148, guid: fe9957e1c8478334f861035c9801d991, type: 3}
+  m_PrefabInstance: {fileID: 1947919554}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843152167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6d4bc0ad6f82c4b8a05e4a1cecd836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &848822199
 GameObject:
   m_ObjectHideFlags: 0
@@ -3946,7 +3962,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-10002
+  m_Name: pb_Mesh27672
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4189,7 +4205,7 @@ BoxCollider:
   m_GameObject: {fileID: 1534477737}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5069,6 +5085,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9010585077968437148, guid: fe9957e1c8478334f861035c9801d991, type: 3}
+      propertyPath: _effectRenderer
+      value: 
+      objectReference: {fileID: 2766897}
     - target: {fileID: 9181364857851639889, guid: fe9957e1c8478334f861035c9801d991, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5113,6 +5133,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9181364857851639892, guid: fe9957e1c8478334f861035c9801d991, type: 3}
+      propertyPath: _playerAnimator
+      value: 
+      objectReference: {fileID: 843152169}
     - target: {fileID: 9181364857851639903, guid: fe9957e1c8478334f861035c9801d991, type: 3}
       propertyPath: m_Name
       value: Player
