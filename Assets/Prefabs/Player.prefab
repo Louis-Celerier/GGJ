@@ -658,7 +658,7 @@ MonoBehaviour:
   _dashingVelocity: 5
   _dashingTime: 0.3
   dirRight: 1
-  _playerAnimator: {fileID: 0}
+  _playerAnimator: {fileID: 9010585077968437148}
 --- !u!114 &462994265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,6 +719,7 @@ MonoBehaviour:
   _armorRenderer: {fileID: 1640204651}
   _swordRenderer: {fileID: 400489625}
   _shieldRenderer: {fileID: 1557550462}
+  _effectRenderer: {fileID: 9181364856284414842}
   _animator: {fileID: 462994268}
   _rb: {fileID: 9181364857851639890}
 --- !u!95 &462994268
