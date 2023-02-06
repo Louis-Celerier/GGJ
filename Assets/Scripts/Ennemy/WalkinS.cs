@@ -20,6 +20,8 @@ public class WalkinS : StateMachineBehaviour
         foreach (Transform t in go.transform) wayPoints.Add(t);
 
         agent.SetDestination(wayPoints[Random.Range(0, wayPoints.Count)].position);
+        Debug.Log(wayPoints[0].position);
+        Debug.Log(wayPoints[1].position);
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -30,7 +32,7 @@ public class WalkinS : StateMachineBehaviour
     {
         if (agent.remainingDistance <= agent.stoppingDistance) agent.SetDestination(wayPoints[Random.Range(0, wayPoints.Count)].position);
 
-        float distance = Vector3.Distance(player.position, animator.transform.position);
+        float distance = Vector2.Distance(player.position, animator.transform.position);
         if (distance <= chasingRange) animator.SetBool("isChasing", true);
 
     }
