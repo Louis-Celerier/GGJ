@@ -6,6 +6,7 @@ public class CheckpointsetChutes : MonoBehaviour
 {
 
     private Vector3 lastPos;
+    public AudioSource rire;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class CheckpointsetChutes : MonoBehaviour
         if (other.gameObject.tag == "Mort") 
         {
             transform.position = lastPos;
+            rire.Play();
         }
    }
    

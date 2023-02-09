@@ -9,6 +9,7 @@ TagManager:
   - Liane
   - Checkpoint
   - Mort
+  - GameMusic
   layers:
   - Default
   - TransparentFX
