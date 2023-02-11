@@ -652,11 +652,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 9181364857851639890}
   _collider: {fileID: 9181364857851639891}
+  distCheckGround: 0.6
   Speed: 4
   gravityStrength: 9.8
-  JumpForce: 6.1
-  _dashingVelocity: 5
-  _dashingTime: 0.3
+  JumpForce: 6
+  _dashingVelocity: 30
+  _dashingTime: 0.2
   dirRight: 1
   _playerAnimator: {fileID: 9010585077968437148}
 --- !u!114 &462994265
