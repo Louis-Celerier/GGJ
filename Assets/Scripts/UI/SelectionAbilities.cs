@@ -39,7 +39,8 @@ public class SelectionAbilities : MonoBehaviour
 
     void AbilitySelected()
     {
-        Debug.Log("Choice " + (indexChoice + 1) + " selected");
+        //Debug.Log("Choice " + (indexChoice + 1) + " selected");
+        Abilities[indexChoice].GetComponent<AbilityIcon>().Selected();
     }
     
 }
